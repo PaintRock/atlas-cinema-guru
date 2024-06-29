@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "yarn": "^1.22.22"
+  },
+  "name": "atlas-cinema-guru",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/PaintRock/atlas-cinema-guru",
+  "author": "Adel Knode <ann.knode@atlasschool.com>",
+  "license": "MIT"
+}
