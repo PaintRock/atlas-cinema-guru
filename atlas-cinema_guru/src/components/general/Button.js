@@ -1,4 +1,6 @@
-import stylesheet from './general';
+import './general';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Button({
     label,
@@ -10,10 +12,9 @@ export default function Button({
     <button 
       className={`button ${className}`}
       onClick={onClick}
-    >
+      {icon && <FontAwesomeIcon icon={icon} className='button-icon" />}
       {label}
-      {icon}
     </button>
   );
-}
+};
 

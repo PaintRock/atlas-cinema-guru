@@ -1,0 +1,60 @@
+/* Input styles */
+.input-container {
+    margin-bottom: 1rem;
+  }
+  
+  .input-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input-wrapper {
+    position: relative;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .input-wrapper input {
+    padding: 0.5rem;
+    padding-left: 2rem;
+    width: 100%;
+  }
+  
+  /* Select styles */
+  .select-container {
+    margin-bottom: 1rem;
+  }
+  
+  .select-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .select-container select {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  
+  /* Button styles */
+  .button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .button-icon {
+    margin-right: 0.5rem;
+  }
+  
+  /* SearchBar styles */
+  .search-bar input {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  

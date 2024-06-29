@@ -1,4 +1,5 @@
-import general from './general.css';
+import React from 'react';
+import './general.css';
 
 export default function SelectInput({
     label, 
@@ -6,20 +7,24 @@ export default function SelectInput({
     className, 
     value, 
     setValue, 
-}) {
+}) => {
+  const handleSelect = (event) => {
+    setValue(event.target.value);
+  };
+  
   return (
-    <div className={`input-container ${className}`}>
-      <label>{label}</label>
+    <div className={`select-container ${className}`}>
+      {label && <label>{label}</label>}
       <select
         value={value}
-        onChange={e => setValue(e.target.value)}
+        onChange={handleSelect}
       >
-        {options.map(option => (
-          <option key={option.value} value={option.value}>
+        {options.map((option, index) => (
+          <option key={index} value={option.value}>
             {option.label}
           </option>
         ))}
       </select>
     </div>
   );
-}
+};
