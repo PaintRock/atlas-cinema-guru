@@ -1,4 +1,6 @@
-import general from './general.css';
+import './general.css';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Input({ 
     label, 
@@ -9,16 +11,21 @@ export default function Input({
     icon, 
     inputAttributes 
     }) {
+      const handleInput = (event) => {
+        setValue(event.target.value);
+      };
   return (
     <div className={`input-container ${className}`}>
-      <label>{label}</label>
-      <input
+      {label && <label>{label}</label>}
+      <div className = "input-wrapper">
+        {icon && <FontAwesomeIcon icon={icon} />}
+        <input 
         type={type}
         value={value}
-        onChange={e => setValue(e.target.value)}
+        onChange={handleInput}
         {...inputAttributes}
       />
-      {icon}
     </div>
+  </div>
   );
 }
