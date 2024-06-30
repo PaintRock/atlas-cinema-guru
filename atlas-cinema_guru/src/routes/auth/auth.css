@@ -1,0 +1,26 @@
+/* You can add your CSS rules here */
+.auth-container {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-switch {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .auth-input {
+    margin-bottom: 10px;
+  }
+  
+  .auth-button {
+    margin-top: 10px;
+  }
+  
