@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Authentication from './routes/auth/Authentication';
 import './App.css';
 
 export default function App() {
@@ -51,7 +52,7 @@ return (
     {isLoggedIn ? ( 
       <p>Dashboard will be here (username: {userUsername})</p>
     ) : (
-      <p>Authentication component will go here </p>
+      <Authentication setIsLoggedIn={setIsLoggedIn} setUserUsername={setUserUsername} />
     )}
   </div>
   );

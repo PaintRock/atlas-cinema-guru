@@ -1,9 +1,14 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import Login from './Login';
+import Register from './Register';
+import Button from '../../components/general/Button';
 import './auth.css';
 
 export default function Authentication({setIsLoggedIn, setUserUsername}) {
-    const [_switch, setSwitch] = useState('True');
+    const [_switch, setSwitch] = useState(true);
     const [username, setUsername] = useState('');
-    const [pasword, setPasword] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -12,7 +17,7 @@ export default function Authentication({setIsLoggedIn, setUserUsername}) {
             const response = await axios.post(route, { username, password });
             const { token } = response.data;
             localStorage.setItem('accessToken', token);
-            setUsername(username);
+            setUserUsername(username);
             setIsLoggedIn(true);
 
         } catch (error) {
