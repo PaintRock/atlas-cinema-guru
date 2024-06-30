@@ -6,10 +6,14 @@
   .input-container label {
     display: block;
     margin-bottom: 0.5rem;
+    justify-content: right;
   }
   
   .input-wrapper {
     position: relative;
+    border: none;
+    margin-right: 10px;
+
   }
   
   .input-icon {
@@ -22,10 +26,12 @@
   .input-wrapper input {
     padding: 0.5rem;
     padding-left: 2rem;
-    width: 100%;
+    width: relative;
+    border: none;
+    border-bottom: 1px solid black;
   }
   
-  /* Select styles */
+
   .select-container {
     margin-bottom: 1rem;
   }

@@ -6,18 +6,19 @@ export default function Login({ username, password, setUsername, setPassword }) 
     return (
         <>
         <Input
-            label="Username"
+            label="Username:"
             type="text"
             value={username}
             setValue={setUsername}
             className="auth-input"
+
             />
-            <Input
-            label="Password"
+        <Input
+            label="Password:"
             type="password"
             value={password}
             setValue={setPassword}
-            classname="auth-input"
+            className="auth-input"
             />
             </>
     );

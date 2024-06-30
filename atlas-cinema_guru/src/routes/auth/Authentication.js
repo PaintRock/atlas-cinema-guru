@@ -29,8 +29,15 @@ export default function Authentication({setIsLoggedIn, setUserUsername}) {
         <div className="auth-container">
             <form className="auth-form" onSubmit={handleSubmit}>
                 <div className="auth-switch">
-                    <Button label="Sign In" onClick={() => setSwitch(true)} className={_switch ? 'active' : ''}/>
-                    <Button label="Sign Up" onClick={() => setSwitch(false)} className={!_switch ? 'active' : ''}/>
+                    <Button 
+                        label="Sign In"     
+                        onClick={() => setSwitch(true)}     
+                        className={`switch-button-in ${_switch ? 'active' : ''}`}
+                        />
+                    <Button 
+                    label="Sign Up" 
+                    onClick={() => setSwitch(false)} 
+                    className={`switch-button-up ${!_switch ? 'active' : ''}`}/>
                 </div>
                 {_switch ? (
                     <Login
@@ -47,7 +54,7 @@ export default function Authentication({setIsLoggedIn, setUserUsername}) {
                      setPassword={setPassword}
                     />
                 )}
-                <Button label={_switch ? 'Login' : 'Register'} type="submit" className="auth-button" />
+                <Button label={_switch ? '+ Sign In' : '+ Sign Up'} type="submit" className="auth-button" />
             </form>
         </div>
     );

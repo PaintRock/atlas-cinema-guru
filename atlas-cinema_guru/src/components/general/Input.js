@@ -15,7 +15,7 @@ export default function Input({
         setValue(event.target.value);
       };
   return (
-    <div className={`input-container ${className}`}>
+    <div className={`auth-input ${className}`}>
       {label && <label>{label}</label>}
       <div className = "input-wrapper">
         {icon && <FontAwesomeIcon icon={icon} />}

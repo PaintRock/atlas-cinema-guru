@@ -1,26 +1,92 @@
-/* You can add your CSS rules here */
 .auth-container {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .auth-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .auth-switch {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .auth-input {
-    margin-bottom: 10px;
-  }
-  
-  .auth-button {
-    margin-top: 10px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+} 
+
+.auth-switch {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-right: 0px;
+}
+
+
+.auth-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  padding-left: 05px;
+}
+
+.switch-button-in,
+.switch-button-up {
+  flex: 1;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.switch-button-in {
+  background-color: rgb(113, 37, 37);
+}
+
+.switch-button-up {
+  background-color: red;
+}
+
+.username-input {
+  margin-bottom: 20px;
+  border: none;
+}
+
+.auth-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%; /* Ensure full width */
+}
+
+.auth-input label {
+  text-align: left;
+  margin-bottom: 5px; /* Space between label and input */
+}
+
+.auth-input input {
+  border: none;
+  border-bottom: 1px solid black; /*is creates the line below */
+  padding: 5px 0;
+  font-size: 16px;
+  background-color: transparent;
+  outline: none;
+  width: calc(100% - 10px); /* Adjust for the width of the icon */
+}
+
+/* Optional: Style for when the input is focused */
+.auth-input input:focus {
+  border-bottom-color: #007bff; /* Change color when focused */
+}
+
+.auth-button {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  width: 35%;
+  color: white;
+  background-color: red;
+  margin-left: auto;
+}
