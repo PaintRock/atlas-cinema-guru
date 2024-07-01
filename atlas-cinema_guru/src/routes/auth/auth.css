@@ -11,16 +11,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 0 auto;
 } 
 
 .auth-switch {
   display: flex;
   width: 100%;
   margin-bottom: 20px;
-  margin-right: 0px;
 }
-
 
 .auth-input {
   display: flex;
@@ -38,27 +35,17 @@
   border: none;
   cursor: pointer;
   color: white;
+  background-color: red;
   transition: background-color 0.3s ease;
 }
 
-.switch-button-in {
+.switch-button-in:hover, .switch-button-up:hover {
   background-color: rgb(113, 37, 37);
-}
-
-.switch-button-up {
-  background-color: red;
 }
 
 .username-input {
   margin-bottom: 20px;
   border: none;
-}
-
-.auth-input {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  width: 100%; /* Ensure full width */
 }
 
 .auth-input label {
@@ -76,7 +63,8 @@
   width: calc(100% - 10px); /* Adjust for the width of the icon */
 }
 
-/* Optional: Style for when the input is focused */
+
+/* Style for when the input is focused */
 .auth-input input:focus {
   border-bottom-color: #007bff; /* Change color when focused */
 }
@@ -89,4 +77,11 @@
   color: white;
   background-color: red;
   margin-left: auto;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.auth-button:hover {
+  background-color: rgb(113, 37, 37);
 }

@@ -15,17 +15,21 @@ export default function Input({
         setValue(event.target.value);
       };
   return (
-    <div className={`auth-input ${className}`}>
-      {label && <label>{label}</label>}
-      <div className = "input-wrapper">
-        {icon && <FontAwesomeIcon icon={icon} />}
+    <div className={`input-container ${className}`}>
+      {label && (
+        <label>
+          {icon && <FontAwesomeIcon icon={icon} className="input-icon" />}
+          {label}
+        </label>
+      )}
+      <div className="input-wrapper">
         <input 
-        type={type}
-        value={value}
-        onChange={handleInput}
-        {...inputAttributes}
-      />
+          type={type}
+          value={value}
+          onChange={handleInput}
+          {...inputAttributes}
+        />
+      </div>
     </div>
-  </div>
   );
 }
