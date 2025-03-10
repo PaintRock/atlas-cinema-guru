@@ -19,19 +19,5 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     authorized: async ({ auth }) => {
       return !!auth;
     },
-    async jwt({ token, account, profile }) {
-      // Add account info to token when signing in
-      if (account) {
-        token.accessToken = account.access_token;
-        token.provider = "github";
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      // Add token data to session
-      session.accessToken = token.accessToken;
-      session.provider = token.provider;
-      return session;
-    }
   },
 });
