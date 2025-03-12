@@ -3,7 +3,7 @@
   I need to fix the lost security*? */
 
 "use client";
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import Sidebar from "@/components/Sidenav";
 import Header from "@/components/Header";
 import Pagenav from "@/components/Pagenav"
@@ -29,11 +29,13 @@ export default function ClientLayout({ children }: Props) {
           
       {/* main content - transitions smoothly with sidebar */}
         <main className="flex-1 overflow-y-auto p-4 transition-all duration-300">
+          <Suspense>
           {children}
+          </Suspense>
         </main>
       {/* Pagination */}
       <div className="absolute bottom-4 left-0 right-0 flex justify-center">
-              <Pagenav />
+             <Suspense> <Pagenav /> </Suspense>
  
         </div>
       </div>

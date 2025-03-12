@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import Pagenav from "@/components/Pagenav";
 import { useSearchParams, useRouter } from 'next/navigation';
@@ -17,7 +17,13 @@ interface Movie {
   synopsis: string;
 }
 
-export default function FavoritesPage() {
+export default function Page(){
+  return <Suspense>
+    <FavoritesPage />
+  </Suspense>
+}
+
+ function FavoritesPage() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [totalPages, setTotalPages] = useState(1);
@@ -167,11 +173,13 @@ export default function FavoritesPage() {
       
       {/* Pagination controls */}
       <div className="flex justify-center mb-8">
+        <Suspense>
         <Pagenav 
           currentPage={currentPage} 
           totalPages={totalPages} 
           onPageChange={goToPage} 
         />
+        </Suspense>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 'use client';
 import Pagenav from "@/components/Pagenav"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Star, Clock } from 'lucide-react';
@@ -19,7 +19,13 @@ interface Movie {
   synopsis: string;
 }
 
-export default function HomePage() {
+export default function Page(){
+  return <Suspense>
+    <HomePage />
+  </Suspense>
+}
+
+export function HomePage() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [totalPages, setTotalPages] = useState(1);
