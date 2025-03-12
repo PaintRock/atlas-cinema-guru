@@ -1,10 +1,10 @@
-'use client';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Pagenav from "@/components/Pagenav"
-import { useSearchParams, useRouter } from 'next/navigation';
-import { Star } from 'lucide-react';
-import { SearchParamsContext } from 'next/dist/shared/lib/hooks-client-context.shared-runtime';
+// 'use client';
+// import { useState, useEffect } from 'react';
+// import Link from 'next/link';
+// import Pagenav from "@/components/Pagenav"
+// import { useSearchParams, useRouter } from 'next/navigation';
+// import { Star } from 'lucide-react';
+// import { SearchParamsContext } from 'next/dist/shared/lib/hooks-client-context.shared-runtime';
 
 //movie interface matches Homepage
 interface Movie {
