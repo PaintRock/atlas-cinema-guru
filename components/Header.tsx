@@ -21,6 +21,7 @@ export default function Header() {
             </div>
             {/* right side */}
             {/* logout button */}
+            {/*avatar and username-- coming soon?*/}
             <div className="ml-auto flex items-center space-x-4">
                 <button
                     onClick={() => console.log('Logout clicked')}
