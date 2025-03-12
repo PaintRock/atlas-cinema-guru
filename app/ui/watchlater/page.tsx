@@ -19,34 +19,34 @@ interface Movie {
 }
 
 export default function WatchLater() {
-    const [movies, setMovies] = useState<Movie[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [totalPages, setTotalPages] = useState(1);
-    const searchParams = useSearchParams();
-    const router = useRouter();
+    // const [movies, setMovies] = useState<Movie[]>([]);
+    // const [loading, setLoading] = useState(true);
+    // const [totalPages, setTotalPages] = useState(1);
+    // const searchParams = useSearchParams();
+    // const router = useRouter();
 
-    // Fet current page from Url or default to 1, because
-    const currentPage = searchParams.get('page')
-        ? parseInt(searchParams.get('page') as string)
-        : 1;
-    // Fetch watchlater based on current page
-    useEffect(() => {
-        async function fetchWatchLater() {
-            setLoadeing(true);
-            try {
-                //call the API enpoint with paginnation
-                const response = await fetch ('/api/watchlater?page=${currentPage}');
+    // // Fet current page from Url or default to 1, because
+    // const currentPage = searchParams.get('page')
+    //     ? parseInt(searchParams.get('page') as string)
+    //     : 1;
+    // // Fetch watchlater based on current page
+    // useEffect(() => {
+    //     async function fetchWatchLater() {
+    //         setLoadeing(true);
+    //         try {
+    //             //call the API enpoint with paginnation
+    //             const response = await fetch ('/api/watchlater?page=${currentPage}');
 
-                if (!response.ok) {
-                    throw new Error('Failed to fetch favorites');
-                }
+    //             if (!response.ok) {
+    //                 throw new Error('Failed to fetch favorites');
+    //             }
 
-                const data = await response.json();
-                //Mark all watch-later movies as true
-                const watchLaterMovies = (data.fa)
-            }
-        }
-    })
+    //             const data = await response.json();
+    //             //Mark all watch-later movies as true
+    //             const watchLaterMovies = (data.fa)
+    //         }
+    //     }
+    // })
     return (
         <div className="flex bg-magenta text-xl justify-center">
             Coming Soon
