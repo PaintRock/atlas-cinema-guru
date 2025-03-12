@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
-import Pagenav from "@/components/Pagenav";
+// import Pagenav from "@/components/Pagenav;
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Star } from 'lucide-react';
 
@@ -172,15 +172,15 @@ export default function Page(){
       </div>
       
       {/* Pagination controls */}
-      <div className="flex justify-center mb-8">
+      {/* <div className="flex justify-center mb-8">
         <Suspense>
         <Pagenav 
           currentPage={currentPage} 
           totalPages={totalPages} 
           onPageChange={goToPage} 
         />
-        </Suspense>
+        </Suspense> */}
       </div>
-    </div>
+    // </div>
   );
 }
