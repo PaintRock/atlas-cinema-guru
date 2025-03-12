@@ -8,7 +8,7 @@ export default function Sidebar({ onExpand }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeItem, setActiveItem] = useState('Home');
   const menuItems = [
-    {/*Static icons to replace with ludide folder, star, clock imports*/}
+    /*Static icons to replace with ludide folder, star, clock imports*/
     { icon: '/icons/folder.png', label: 'Home', href: '/' },
     { icon: '/icons/star2.png', label: 'Favorites', href: '/ui/favorites' },
     { icon: '/icons/clock.png', label: 'Watch Later', href: '/ui/watchlater' },
