@@ -13,6 +13,7 @@ export const GET = auth(async (req: NextRequest) => {
     ? Number(params.get("maxYear"))
     : new Date().getFullYear();
   const query = params.get("query") ?? "";
+  
 
   //@ts-ignore
   if (!req.auth) {

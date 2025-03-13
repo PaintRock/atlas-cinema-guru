@@ -194,7 +194,7 @@ export function HomePage() {
       
       const method = movie.watchLater ? 'DELETE' : 'POST';
       
-      const response = await fetch(`/api/watchlater/${movieId}`, {
+      const response = await fetch(`/api/watch-later/${movieId}`, {
         method: method,
       });
       
@@ -307,14 +307,15 @@ export function HomePage() {
                 )}
                 
                 {/* Movie info overlay - only visible on hover */}
+                
                 <div className="absolute bottom-0 left-0 right-0 h-4/10 bg-[#00003c]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end">
                   <div className="p-4">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{movie.title} ({movie.released})</h1>
+                    <h1 className="text-2xl sm:text-1xl md:text-1x2 font-bold text-white">{movie.title} ({movie.released})</h1>
                     <p className="text-sm text-teal-200 mt-2">{movie.synopsis}</p>
                     <p className="text-sm text-gray-300 mt-2">{movie.genre}</p>
                     
                     {/* Action buttons in top right corner of the overlay */}
-                    <div className="flex border-2 border-teal-200 relative rounded-lg overflow-hidden shadow-lg h-80">
+              
 
                     <div className="absolute top-6 right-2 z-10 cursor-pointer p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <button 
@@ -328,7 +329,7 @@ export function HomePage() {
                         />
                       </button>
                       <button 
-                        className="p-1 rounded-full cursor-pointer"
+                        className="p-1 bg-[#00003c]/10 rounded-full cursor-pointer"
                         onClick={(e) => toggleWatchLater(e, movie.id)}
                       >
                         <Clock 
@@ -340,7 +341,7 @@ export function HomePage() {
                     </div>
                   </div>
                   </div>
-                </div>
+              
               </div>
             {/* </Link> */}
           </div>

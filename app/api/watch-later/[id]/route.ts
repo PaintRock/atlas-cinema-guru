@@ -1,8 +1,4 @@
-import {
-  deleteWatchLater,
-  insertWatchLater,
-  watchLaterExists,
-} from "@/lib/data";
+import { deleteWatchLater, insertWatchLater, watchLaterExists, } from "@/lib/data";
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/auth";
 

@@ -176,7 +176,7 @@ export async function fetchWatchLaters(page: number, userEmail: string) {
 export async function insertWatchLater(title_id: string, userEmail: string) {
   try {
     const data =
-      await sql<Question>`INSERT INTO watchLater (title_id, user_id) VALUES (${title_id}, ${userEmail})`;
+      await sql<Question>`INSERT INTO watchlater (title_id, user_id) VALUES (${title_id}, ${userEmail})`;
 
     insertActivity(title_id, userEmail, "WATCH_LATER");
     return data.rows;
@@ -192,7 +192,7 @@ export async function insertWatchLater(title_id: string, userEmail: string) {
 export async function deleteWatchLater(title_id: string, userEmail: string) {
   try {
     const data =
-      await sql`DELETE FROM watchLater WHERE title_id = ${title_id} AND user_id = ${userEmail}`;
+      await sql`DELETE FROM watchlater WHERE title_id = ${title_id} AND user_id = ${userEmail}`;
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
@@ -209,7 +209,7 @@ export async function watchLaterExists(
 ): Promise<boolean> {
   try {
     const data =
-      await sql`SELECT * FROM watchLater WHERE title_id = ${title_id} AND user_id = ${userEmail}`;
+      await sql`SELECT * FROM watchlater WHERE title_id = ${title_id} AND user_id = ${userEmail}`;
     return data.rows.length > 0;
   } catch (error) {
     console.error("Database Error:", error);
