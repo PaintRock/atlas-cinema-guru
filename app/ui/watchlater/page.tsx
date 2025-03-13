@@ -124,14 +124,15 @@ function WatchLaterPage() {
             <Link href={`/movies/${movie.id}`}>
               <div className="flex border-2 border-teal-200 relative rounded-lg overflow-hidden shadow-lg h-80">
                 {/* Clock icon in upper right, only visible on hover */}
+                
                 <div 
                   className="absolute top-2 right-2 z-10 cursor-pointer p-1 rounded-full bg-[#00003c]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   onClick={(e) => toggleWatchLater(e, movie.id)}
                 >
                   <Clock 
                     size={24} 
-                    fill="#4FC3F7" 
-                    color="#4FC3F7"
+                    fill={movie.watchLater ? "#FFD700" : "transparent"}
+                    color="white"
                   />
                 </div>
                 
