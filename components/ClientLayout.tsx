@@ -33,13 +33,15 @@ export default function ClientLayout({ children }: Props) {
           {children}
           </Suspense>
       
-      {/* forward page/ back page control -- following movie bottom */}
+      
+        </main>
+        {/* forward page/ back page control -- following movie bottom */}
+      </div>
       <div 
-      className="flex justify-center mb-8">
+      className="flex justify-center mb-2">
              <Suspense> <Pagenav /> </Suspense>
       </div>
-        </main>
-      </div>
+      
     </div>
   );
 }
