@@ -73,8 +73,8 @@ function WatchLaterPage() {
     e.stopPropagation(); // Stop event bubbling
     
     try {
-      // Since this is the watchLater page, we're only removing from watchLater
-      const response = await fetch(`/api/watchlater/${movieId}`, {
+      // Oly remove from watch-later
+      const response = await fetch(`/api/watch-later/${movieId}`, {
         method: 'DELETE',
       });
       

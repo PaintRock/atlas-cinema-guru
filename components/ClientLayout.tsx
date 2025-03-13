@@ -26,22 +26,19 @@ export default function ClientLayout({ children }: Props) {
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar on the left */}
         <Sidebar onExpand={setSidebarExpanded} />
-          
+        <div className="flex-1 flex flex-col overflow-hidden">    
       {/* main content - transitions smoothly with sidebar */}
         <main className="flex-1 overflow-y-auto p-4 transition-all duration-300">
           <Suspense>
           {children}
           </Suspense>
-      
-      
         </main>
         {/* forward page/ back page control -- following movie bottom */}
-      </div>
-      <div 
-      className="flex justify-center mb-2">
+        <div className="p-1 border-t border-gray-700 bg-[#00003c] flex justify-center">
              <Suspense> <Pagenav /> </Suspense>
-      </div>
-      
+          </div>
+        </div>
+      </div>     
     </div>
   );
 }
