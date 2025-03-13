@@ -314,9 +314,11 @@ export function HomePage() {
                     <p className="text-sm text-gray-300 mt-2">{movie.genre}</p>
                     
                     {/* Action buttons in top right corner of the overlay */}
-                    <div className="absolute top-2 right-2 flex space-x-2">
+                    <div className="flex border-2 border-teal-200 relative rounded-lg overflow-hidden shadow-lg h-80">
+
+                    <div className="absolute top-6 right-2 z-10 cursor-pointer p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <button 
-                        className="p-1 bg-[#00003c]/60 rounded-full cursor-pointer"
+                        className="p-1 rounded-full cursor-pointer"
                         onClick={(e) => toggleFavorite(e, movie.id)}
                       >
                         <Star 
@@ -326,7 +328,7 @@ export function HomePage() {
                         />
                       </button>
                       <button 
-                        className="p-1 bg-[#00003c]/60 rounded-full cursor-pointer"
+                        className="p-1 rounded-full cursor-pointer"
                         onClick={(e) => toggleWatchLater(e, movie.id)}
                       >
                         <Clock 
@@ -336,6 +338,7 @@ export function HomePage() {
                         />
                       </button>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>

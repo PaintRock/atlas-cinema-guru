@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
-// import Pagenav from "@/components/Pagenav;
+// import Pagenav from "@/components/Pagenav";
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Star } from 'lucide-react';
 
@@ -23,7 +23,7 @@ export default function Page(){
   </Suspense>
 }
 
- function FavoritesPage() {
+function FavoritesPage() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   const [totalPages, setTotalPages] = useState(1);
@@ -124,9 +124,9 @@ export default function Page(){
           <div key={movie.id} className="relative group transition-all duration-300 hover:z-10 hover:scale-110 hover:shadow-xl">
             <Link href={`/movies/${movie.id}`}>
               <div className="flex border-2 border-teal-200 relative rounded-lg overflow-hidden shadow-lg h-80">
-                {/* Favorite Star - Always visible */}
+                {/* Star in upper right, only visible on hover */}
                 <div 
-                  className="absolute top-2 right-2 z-10 cursor-pointer p-1 rounded-full bg-[#00003c]/60"
+                  className="absolute top-2 right-2 z-10 cursor-pointer p-1 rounded-full bg-[#00003c]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   onClick={(e) => toggleFavorite(e, movie.id)}
                 >
                   <Star 
@@ -149,20 +149,13 @@ export default function Page(){
                 )}
                 
                 {/* Movie info overlay - only visible on hover */}
-                <div className="absolute bottom-0 left-0 right-0 h-4/10 bg-[#00003c]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end">
-                  <div className="p-4">
-                    <div className="flex justify-between items-center">
+                <div className="absolute h-full w-full bg-[#00003c]/10">
+                  <div className="absolute bottom-0 left-0 right-0 h-4/10 bg-[#00003c]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end">
+                    <div className="p-4">
                       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{movie.title} ({movie.released})</h1>
-                      <Star 
-                        size={24} 
-                        fill="#FFD700" 
-                        color="#FFD700" 
-                        className="cursor-pointer"
-                        onClick={(e) => toggleFavorite(e, movie.id)}
-                      />
+                      <p className="text-sm text-teal-200 mt-2">{movie.synopsis}</p>
+                      <p className="text-sm text-gray-300 mt-2">{movie.genre}</p>
                     </div>
-                    <p className="text-sm text-teal-200 mt-2">{movie.synopsis}</p>
-                    <p className="text-sm text-gray-300 mt-2">{movie.genre}</p>
                   </div>
                 </div>
               </div>
@@ -179,8 +172,8 @@ export default function Page(){
           totalPages={totalPages} 
           onPageChange={goToPage} 
         />
-        </Suspense> */}
-      </div>
-    // </div>
+        </Suspense>
+      </div> */}
+    </div>
   );
 }
